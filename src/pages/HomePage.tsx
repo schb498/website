@@ -8,21 +8,21 @@ const HomePage = () => {
         <Card shadow="sm" padding="lg" radius="md" withBorder>
           <Link to="/pukeko" style={{ textDecoration: "none" }}>
             <Center>
-              <Text>Pukeko Page</Text>
+              <Text>Pukeko</Text>
             </Center>
           </Link>
         </Card>
         <Card shadow="sm" padding="lg" radius="md" withBorder>
           <Link to="/" style={{ textDecoration: "none" }}>
             <Center>
-              <Text>Other Page</Text>
+              <Text>Project 2</Text>
             </Center>
           </Link>
         </Card>
         <Card shadow="sm" padding="lg" radius="md" withBorder>
           <Link to="/" style={{ textDecoration: "none" }}>
             <Center>
-              <Text>Other Page</Text>
+              <Text>Project 3</Text>
             </Center>
           </Link>
         </Card>
