@@ -13,9 +13,9 @@ const HomePage = () => {
           </Link>
         </Card>
         <Card shadow="sm" padding="lg" radius="md" withBorder>
-          <Link to="/" style={{ textDecoration: "none" }}>
+          <Link to="/tbce" style={{ textDecoration: "none" }}>
             <Center>
-              <Text>Project 2</Text>
+              <Text>TBCE</Text>
             </Center>
           </Link>
         </Card>

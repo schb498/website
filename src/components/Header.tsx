@@ -1,13 +1,25 @@
-import { Container, useMantineTheme, Text } from "@mantine/core";
+import {
+  Container,
+  Text,
+  Button,
+  useMantineColorScheme,
+  useMantineTheme,
+  Title,
+} from "@mantine/core";
+import { MdDarkMode, MdOutlineLightMode } from "react-icons/md";
 
 function Header() {
   const theme = useMantineTheme();
+  const { colorScheme, setColorScheme } = useMantineColorScheme();
+
+  const toggleColorScheme = () => {
+    setColorScheme(colorScheme === "light" ? "dark" : "light");
+  };
 
   return (
     <Container
       size="full"
       style={{
-        backgroundColor: theme.colors.blue[2],
         padding: "10px",
         position: "sticky",
         top: 0,
@@ -15,9 +27,20 @@ function Header() {
         width: "100%",
       }}
     >
-      <Text ta="center" size="xl" fw={700}>
+      <Title order={1} ta="center">
         Project Demo
-      </Text>
+      </Title>
+      <Button
+        onClick={toggleColorScheme}
+        variant="outline"
+        style={{ marginTop: "10px" }}
+      >
+        {colorScheme === "light" ? (
+          <MdDarkMode size={18} />
+        ) : (
+          <MdOutlineLightMode size={18} />
+        )}
+      </Button>
     </Container>
   );
 }
