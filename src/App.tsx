@@ -19,7 +19,7 @@ function App() {
         <Header />
         <Divider my="md" />
         <Routes>
-          <Route path="/" element={<HomePage />} />
+          <Route path="/website" element={<HomePage />} />
           <Route path="/pukeko" element={<PukekoPage />} />
           <Route path="/tbce" element={<TbcePage />} />
           <Route path="/table-translator" element={<TableTranslatorPage />} />
