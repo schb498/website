@@ -3,7 +3,7 @@ import btceClip from "../assets/btce.mp4";
 
 const TbcePage = () => {
   return (
-    <Container>
+    <Container size="xl">
       <Title order={1} p={10}>
         Text Bolder Chrome Extension
       </Title>
@@ -19,10 +19,10 @@ const TbcePage = () => {
         improved focus.
       </Text>
 
-      <Title order={3} mt="xl" align="left">
+      <Title order={3} mt="xl">
         Key Features
       </Title>
-      <List withPadding mt="sm" spacing="md" align="left">
+      <List withPadding my="lg" spacing="sm">
         <List.Item>
           Toggle Bolding: Easily switch the bolding effect on and off for the
           current webpage.

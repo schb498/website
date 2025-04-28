@@ -3,9 +3,9 @@ import pukekoClip from "../assets/pukeko2.mp4";
 
 const PukekoPage = () => {
   return (
-    <Container>
+    <Container size="xl">
       <Title order={1} p={10}>
-        Pukeko - Task Scheduling Editor
+        Pukeko - Task Scheduling Visualiser
       </Title>
 
       <video width="100%" controls>
@@ -14,15 +14,15 @@ const PukekoPage = () => {
       </video>
 
       <Text mt="md">
-        This project, Pukeko, is a task scheduling editor designed to streamline
-        and manage tasks efficiently. The video above demonstrates the key
-        features and functionality of the project.
+        Pukeko is an application for visualising sample schedules used for
+        computer processors in parallel computing. The video below demonstrates
+        the key features and functionality of the project.
       </Text>
 
-      <Title order={3} mt="xl" align="left">
+      <Title order={3} mt="xl">
         Key Features
       </Title>
-      <List withPadding mt="sm" spacing="md" align="left">
+      <List withPadding my="lg" spacing="sm">
         <List.Item>Loading/storing task schedules (GXL format)</List.Item>
         <List.Item>Visualising schedules</List.Item>
         <List.Item>Visualising task dependency graphs/DAGs</List.Item>
