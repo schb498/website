@@ -15,11 +15,11 @@ function App() {
   });
   return (
     <MantineProvider theme={theme} defaultColorScheme="light">
-      <Router>
+      <Router basename="/website">
         <Header />
         <Divider my="md" />
         <Routes>
-          <Route path="/website" element={<HomePage />} />
+          <Route path="/" element={<HomePage />} />
           <Route path="/pukeko" element={<PukekoPage />} />
           <Route path="/tbce" element={<TbcePage />} />
           <Route path="/table-translator" element={<TableTranslatorPage />} />
