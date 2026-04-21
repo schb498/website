@@ -4,6 +4,7 @@ import { createTheme, Divider, MantineProvider } from "@mantine/core";
 import Header from "./components/Header";
 import HomePage from "./pages/HomePage";
 import PukekoPage from "./pages/PukekoPage";
+import EventHorizonPage from "./pages/EventHorizonPage";
 import TbcePage from "./pages/TbcePage";
 import TableTranslatorPage from "./pages/TableTranslatorPage";
 import TCMAIPage from "./pages/TCMAIPage";
@@ -22,6 +23,7 @@ function App() {
         <Routes>
           <Route path="/" element={<HomePage />} />
           <Route path="/pukeko" element={<PukekoPage />} />
+          <Route path="/event-horizon" element={<EventHorizonPage />} />
           <Route path="/tcm-ai" element={<TCMAIPage />} />
           <Route path="/tbce" element={<TbcePage />} />
           <Route path="/table-translator" element={<TableTranslatorPage />} />

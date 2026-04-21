@@ -34,6 +34,24 @@ const HomePage = () => {
           </Link>
 
           <Link
+            to="/event-horizon"
+            style={{ textDecoration: "none", color: "inherit" }}
+          >
+            <Card
+              shadow="sm"
+              padding="lg"
+              radius="md"
+              withBorder
+              style={cardStyle}
+              className="hover-card"
+            >
+              <Center>
+                <Text>Event Horizon</Text>
+              </Center>
+            </Card>
+          </Link>
+
+          <Link
             to="/tcm-ai"
             style={{ textDecoration: "none", color: "inherit" }}
           >
