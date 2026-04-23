@@ -1,14 +1,21 @@
-import { Title, Text, Container, List } from "@mantine/core";
+import { Title, Text, Container, List, Flex, ActionIcon } from "@mantine/core";
+import { useNavigate } from "react-router-dom";
+import { MdArrowBack } from "react-icons/md";
 import pukekoClip from "../assets/pukeko2.mp4";
 
 const PukekoPage = () => {
+  const navigate = useNavigate();
+
   return (
     <Container size="xl">
-      <Title order={1} p={10}>
-        Pukeko - Task Scheduling Visualiser
-      </Title>
+      <Flex align="center" gap="sm" mb="md">
+        <ActionIcon variant="subtle" onClick={() => navigate(-1)} aria-label="Back">
+          <MdArrowBack size={22} />
+        </ActionIcon>
+        <Title order={1}>Pukeko - Task Scheduling Visualiser</Title>
+      </Flex>
 
-      <video width="100%" controls>
+      <video width="100%" controls style={{ maxWidth: "100%" }}>
         <source src={pukekoClip} type="video/mp4" />
         Your browser does not support the video tag.
       </video>

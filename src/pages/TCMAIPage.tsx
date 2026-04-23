@@ -1,14 +1,21 @@
-import { Title, Text, Container, List, Anchor } from "@mantine/core";
+import { Title, Text, Container, List, Anchor, Flex, ActionIcon } from "@mantine/core";
+import { useNavigate } from "react-router-dom";
+import { MdArrowBack } from "react-icons/md";
 import TcmClip from "../assets/tcm-ai.mp4";
 
 const TCMAIPage = () => {
+  const navigate = useNavigate();
+
   return (
     <Container size="xl">
-      <Title order={1} p={10}>
-        TCM AI Diagnoser
-      </Title>
+      <Flex align="center" gap="sm" mb="md">
+        <ActionIcon variant="subtle" onClick={() => navigate(-1)} aria-label="Back">
+          <MdArrowBack size={22} />
+        </ActionIcon>
+        <Title order={1}>TCM AI Diagnoser</Title>
+      </Flex>
 
-      <video width="100%" controls>
+      <video width="100%" controls style={{ maxWidth: "100%" }}>
         <source src={TcmClip} type="video/mp4" />
         Your browser does not support the video tag.
       </video>

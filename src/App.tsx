@@ -16,18 +16,20 @@ function App() {
     primaryShade: 8,
   });
   return (
-    <MantineProvider theme={theme} defaultColorScheme="light">
+    <MantineProvider theme={theme} defaultColorScheme="dark">
       <Router basename="/website">
         <Header />
         <Divider my="md" />
-        <Routes>
-          <Route path="/" element={<HomePage />} />
-          <Route path="/pukeko" element={<PukekoPage />} />
-          <Route path="/event-horizon" element={<EventHorizonPage />} />
-          <Route path="/tcm-ai" element={<TCMAIPage />} />
-          <Route path="/tbce" element={<TbcePage />} />
-          <Route path="/table-translator" element={<TableTranslatorPage />} />
-        </Routes>
+        <div style={{ overflowX: "hidden", paddingBottom: 15 }}>
+          <Routes>
+            <Route path="/" element={<HomePage />} />
+            <Route path="/pukeko" element={<PukekoPage />} />
+            <Route path="/event-horizon" element={<EventHorizonPage />} />
+            <Route path="/tcm-ai" element={<TCMAIPage />} />
+            <Route path="/tbce" element={<TbcePage />} />
+            <Route path="/table-translator" element={<TableTranslatorPage />} />
+          </Routes>
+        </div>
       </Router>
     </MantineProvider>
   );

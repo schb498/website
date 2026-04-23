@@ -5,16 +5,25 @@ import {
   List,
   Text,
   Title,
+  Flex,
+  ActionIcon,
 } from "@mantine/core";
+import { useNavigate } from "react-router-dom";
+import { MdArrowBack } from "react-icons/md";
 
 const EVENT_HORIZON_URL = "https://eventhorizonsc.netlify.app/";
 
 const EventHorizonPage = () => {
+  const navigate = useNavigate();
+
   return (
     <Container size="xl">
-      <Title order={1} p={10}>
-        Event Horizon
-      </Title>
+      <Flex align="center" gap="sm" mb="md">
+        <ActionIcon variant="subtle" onClick={() => navigate(-1)} aria-label="Back">
+          <MdArrowBack size={22} />
+        </ActionIcon>
+        <Title order={1}>Event Horizon</Title>
+      </Flex>
 
       <AspectRatio ratio={16 / 9} mt="md">
         <iframe

@@ -1,10 +1,12 @@
 import {
   Container,
-  Button,
+  ActionIcon,
   useMantineColorScheme,
   Title,
   Flex,
   Group,
+  Stack,
+  Text,
 } from "@mantine/core";
 import { MdDarkMode, MdOutlineLightMode } from "react-icons/md";
 import { HiHome } from "react-icons/hi";
@@ -19,36 +21,58 @@ function Header() {
 
   return (
     <Container
-      size="full"
-      style={{
-        padding: "20px",
-        top: 0,
-        zIndex: 1000,
-        width: "100%",
-      }}
+      fluid
+      style={{ padding: "20px 24px 8px", top: 0, zIndex: 1000 }}
     >
       <Flex justify="space-between" align="center">
-        <div style={{ width: "80px" }} />
-        <Title order={1} ta="center" style={{ flexGrow: 1 }}>
-          Project Showcase
-        </Title>
+        <div style={{ width: "72px" }} />
 
-        <Group>
-          <Button
-            variant="outline"
+        <Stack align="center" gap={4} style={{ flexGrow: 1 }}>
+          <Title
+            order={1}
+            ta="center"
+            style={{
+              letterSpacing: "0.15em",
+              textTransform: "uppercase",
+              fontWeight: 700,
+            }}
+          >
+            Project Showcase
+          </Title>
+          <Text
+            size="md"
+            c="dimmed"
+            fw={500}
+            ta="center"
+            style={{ letterSpacing: "0.04em" }}
+          >
+            Shiangbo Chang
+          </Text>
+        </Stack>
+
+        <Group gap="sm" align="flex-start">
+          <ActionIcon
+            variant="subtle"
             component={Link}
             to="/"
-            style={{ marginRight: "10px" }}
+            size="lg"
+            aria-label="Home"
           >
-            <HiHome size={18} />
-          </Button>
-          <Button onClick={toggleColorScheme} variant="outline">
+            <HiHome size={30} />
+          </ActionIcon>
+
+          <ActionIcon
+            variant="subtle"
+            onClick={toggleColorScheme}
+            size="lg"
+            aria-label="Toggle theme"
+          >
             {colorScheme === "light" ? (
-              <MdDarkMode size={18} />
+              <MdDarkMode size={30} />
             ) : (
-              <MdOutlineLightMode size={18} />
+              <MdOutlineLightMode size={30} />
             )}
-          </Button>
+          </ActionIcon>
         </Group>
       </Flex>
     </Container>

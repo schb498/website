@@ -1,13 +1,32 @@
-import { Title, Text, Container, List, Image } from "@mantine/core";
+import {
+  Title,
+  Text,
+  Container,
+  List,
+  Image,
+  Flex,
+  ActionIcon,
+} from "@mantine/core";
+import { useNavigate } from "react-router-dom";
+import { MdArrowBack } from "react-icons/md";
 import exampleTableImage from "../assets/table-translator.jpg";
 import webpageImage from "../assets/table-example.jpg";
 
-const TbcePage = () => {
+const TableTranslatorPage = () => {
+  const navigate = useNavigate();
+
   return (
     <Container size="xl">
-      <Title order={1} p={10}>
-        PDF Table Translator
-      </Title>
+      <Flex align="center" gap="sm" mb="md">
+        <ActionIcon
+          variant="subtle"
+          onClick={() => navigate(-1)}
+          aria-label="Back"
+        >
+          <MdArrowBack size={22} />
+        </ActionIcon>
+        <Title order={1}>PDF Table Translator</Title>
+      </Flex>
 
       <Container size="xs" my="md">
         <Image src={webpageImage} alt="Table example" />
@@ -17,9 +36,7 @@ const TbcePage = () => {
         src={exampleTableImage}
         alt="PDF Table Translator Preview"
         width="100%"
-        style={{
-          border: "1px solid lightgray",
-        }}
+        style={{ border: "1px solid lightgray" }}
       />
 
       <Text mt="md">
@@ -48,4 +65,4 @@ const TbcePage = () => {
   );
 };
 
-export default TbcePage;
+export default TableTranslatorPage;
