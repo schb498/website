@@ -8,6 +8,7 @@ import EventHorizonPage from "./pages/EventHorizonPage";
 import TbcePage from "./pages/TbcePage";
 import TableTranslatorPage from "./pages/TableTranslatorPage";
 import TCMAIPage from "./pages/TCMAIPage";
+import PortalWorkflowAssistantPage from "./pages/PortalWorkflowAssistantPage";
 
 function App() {
   const theme = createTheme({
@@ -28,6 +29,10 @@ function App() {
             <Route path="/tcm-ai" element={<TCMAIPage />} />
             <Route path="/tbce" element={<TbcePage />} />
             <Route path="/table-translator" element={<TableTranslatorPage />} />
+            <Route
+              path="/portal-workflow-assistant"
+              element={<PortalWorkflowAssistantPage />}
+            />
           </Routes>
         </div>
       </Router>

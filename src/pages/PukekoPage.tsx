@@ -9,10 +9,14 @@ const PukekoPage = () => {
   return (
     <Container size="xl">
       <Flex align="center" gap="sm" mb="md">
-        <ActionIcon variant="subtle" onClick={() => navigate(-1)} aria-label="Back">
+        <ActionIcon
+          variant="subtle"
+          onClick={() => navigate(-1)}
+          aria-label="Back"
+        >
           <MdArrowBack size={22} />
         </ActionIcon>
-        <Title order={1}>Pukeko - Task Scheduling Visualiser</Title>
+        <Title order={1}>Pukeko - Task Schedule Visualiser</Title>
       </Flex>
 
       <video width="100%" controls style={{ maxWidth: "100%" }}>

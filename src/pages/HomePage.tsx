@@ -1,8 +1,40 @@
+import React from "react";
 import { Card, Container, Text } from "@mantine/core";
 import { Link } from "react-router-dom";
 import { FaSitemap, FaRocket, FaBrain, FaTable } from "react-icons/fa";
-import { MdFormatBold } from "react-icons/md";
+import { MdMedicalServices } from "react-icons/md";
 import { IconType } from "react-icons";
+
+const TbceIcon = ({
+  size = 24,
+  className,
+  style,
+}: {
+  size?: number | string;
+  className?: string;
+  style?: React.CSSProperties;
+}) => (
+  <svg
+    width={size}
+    height={size}
+    viewBox="0 0 120 100"
+    className={className}
+    style={style}
+    xmlns="http://www.w3.org/2000/svg"
+  >
+    <text
+      x="60"
+      y="65"
+      textAnchor="middle"
+      fontSize="44"
+      fill="currentColor"
+      fontFamily="Open Sans, sans-serif"
+    >
+      <tspan fontWeight="800">TB</tspan>
+      <tspan fontWeight="400">CE</tspan>
+    </text>
+  </svg>
+);
 
 interface Project {
   to: string;
@@ -14,38 +46,45 @@ interface Project {
 const projects: Project[] = [
   {
     to: "/pukeko",
-    title: "Task Scheduler Visualiser",
+    title: "Task Schedule Visualiser",
     description:
-      "Generates Gantt charts to visualise parallel processor schedules and task dependencies across processors.",
+      "A way to visualise parallel running task schedules and their dependencies. Used for parallel computing research",
     Icon: FaSitemap,
   },
   {
     to: "/event-horizon",
     title: "Event Horizon",
     description:
-      "An interactive space events tracker. Explore rocket launches, eclipses, asteroid approaches, and celestial events.",
+      "Track space events including rocket launches, eclipses, asteroid approaches, and celestial events",
     Icon: FaRocket,
   },
   {
     to: "/tcm-ai",
-    title: "AI TCM Diagnoser",
+    title: "TCM AI Diagnoser",
     description:
-      "Applies TCM principles via AI to generate herbal prescriptions, acupuncture plans, and lifestyle treatments based on symptom analysis.",
+      "Uses AI to provide diagnoses and suggested treatments based on Traditional Chinese Medicine principles",
     Icon: FaBrain,
   },
   {
     to: "/tbce",
-    title: "TBCE",
+    title: "Text Bolder Chrome Extension",
     description:
       "Bolds the first half of words to create a powerful, easier-to-read text style. Toggle on any webpage instantly.",
-    Icon: MdFormatBold,
+    Icon: TbceIcon as IconType,
   },
   {
     to: "/table-translator",
     title: "Table Translator",
     description:
-      "Efficiently extracts and translates tabular data from PDF images into structured logic representations.",
+      "Extracts and translates tabular data from PDF images into structured logic representations.",
     Icon: FaTable,
+  },
+  {
+    to: "/portal-workflow-assistant",
+    title: "Portal Workflow Assistant",
+    description:
+      "Automates patient portal data extraction and ACC claim expiry notifications for a medical clinic",
+    Icon: MdMedicalServices,
   },
 ];
 
@@ -93,11 +132,24 @@ const HomePage = () => {
                   style={{ marginBottom: 20 }}
                 />
 
-                <Text fw={700} size="md" ta="center" mb={10} lh={1.3}>
+                <Text
+                  fw={700}
+                  size="md"
+                  ta="center"
+                  mb={10}
+                  lh={1.3}
+                  style={{ minHeight: "2.6em", display: "flex", alignItems: "center", justifyContent: "center" }}
+                >
                   {project.title}
                 </Text>
 
-                <Text size="sm" c="dimmed" ta="center" lh={1.5}>
+                <Text
+                  size="sm"
+                  c="dimmed"
+                  ta="center"
+                  lh={1.5}
+                  style={{ flex: 1 }}
+                >
                   {project.description}
                 </Text>
               </Card>
