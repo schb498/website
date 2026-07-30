@@ -1,5 +1,4 @@
 import {
-  Anchor,
   AspectRatio,
   Container,
   List,
@@ -10,6 +9,7 @@ import {
 } from "@mantine/core";
 import { useNavigate } from "react-router-dom";
 import { MdArrowBack } from "react-icons/md";
+import ProjectLinkButton from "../components/ProjectLinkButton";
 
 const EVENT_HORIZON_URL = "https://eventhorizonsc.netlify.app/";
 
@@ -18,11 +18,16 @@ const EventHorizonPage = () => {
 
   return (
     <Container size="xl">
-      <Flex align="center" gap="sm" mb="md">
-        <ActionIcon variant="subtle" onClick={() => navigate(-1)} aria-label="Back">
+      <Flex align="center" gap="sm" mb="md" wrap="wrap">
+        <ActionIcon
+          variant="subtle"
+          onClick={() => navigate(-1)}
+          aria-label="Back"
+        >
           <MdArrowBack size={22} />
         </ActionIcon>
         <Title order={1}>Event Horizon</Title>
+        <ProjectLinkButton href={EVENT_HORIZON_URL} />
       </Flex>
 
       <AspectRatio ratio={16 / 9} mt="md">
@@ -47,21 +52,16 @@ const EventHorizonPage = () => {
       <Title order={3} mt="xl">
         Key Features
       </Title>
-      <List withPadding my="lg" spacing="sm">
+      <List withPadding my="lg">
         <List.Item>
-          Track and display recent and upcoming space events
+          Track and display recent and upcoming space events, with advanced
+          filtering and search capabilities
         </List.Item>
         <List.Item>Display detailed information for each event</List.Item>
-        <List.Item>User accounts and saved events</List.Item>
+        <List.Item>
+          Save and add your favourite events into your calendar to track them
+        </List.Item>
       </List>
-
-      <Anchor
-        href={EVENT_HORIZON_URL}
-        target="_blank"
-        rel="noopener noreferrer"
-      >
-        Visit the website
-      </Anchor>
     </Container>
   );
 };

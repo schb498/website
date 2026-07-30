@@ -1,6 +1,6 @@
 import { Route, Routes, BrowserRouter as Router } from "react-router-dom";
 import "@mantine/core/styles.css";
-import { createTheme, Divider, MantineProvider } from "@mantine/core";
+import { createTheme, Divider, List, MantineProvider } from "@mantine/core";
 import Header from "./components/Header";
 import HomePage from "./pages/HomePage";
 import PukekoPage from "./pages/PukekoPage";
@@ -11,14 +11,30 @@ import TCMAIPage from "./pages/TCMAIPage";
 import PortalWorkflowAssistantPage from "./pages/PortalWorkflowAssistantPage";
 import NextActionPage from "./pages/NextActionPage";
 
+// Slightly stronger borders than Mantine's defaults (gray-3 / dark-4). Applies
+// site-wide to Card withBorder, Divider and anything else using the default border.
+const borderVariables = () => ({
+  variables: {},
+  light: { "--mantine-color-default-border": "var(--mantine-color-gray-4)" },
+  dark: { "--mantine-color-default-border": "var(--mantine-color-dark-3)" },
+});
+
 function App() {
   const theme = createTheme({
     fontFamily: "Open Sans, sans-serif",
     primaryColor: "teal",
     primaryShade: 8,
+    components: {
+      // Single place to tune the gap between bullet points site-wide.
+      List: List.extend({ defaultProps: { spacing: 6 } }),
+    },
   });
   return (
-    <MantineProvider theme={theme} defaultColorScheme="dark">
+    <MantineProvider
+      theme={theme}
+      defaultColorScheme="dark"
+      cssVariablesResolver={borderVariables}
+    >
       <Router basename="/website">
         <Header />
         <Divider my="md" />

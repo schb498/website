@@ -1,6 +1,20 @@
 import { Title, Text, Container, List, Flex, ActionIcon } from "@mantine/core";
 import { useNavigate } from "react-router-dom";
 import { MdArrowBack } from "react-icons/md";
+import MediaCarousel from "../components/MediaCarousel";
+import manaToolsImage from "../assets/ManaTools.png";
+import accNotificationsImage from "../assets/ACC-notifications-manager.png";
+
+const SCREENSHOTS = [
+  {
+    src: manaToolsImage,
+    alt: "ManaTools patient list with Google Contacts sync status",
+  },
+  {
+    src: accNotificationsImage,
+    alt: "ACC Notifications Manager showing claim expiry dates and scheduled SMS reminders",
+  },
+];
 
 const PortalWorkflowAssistantPage = () => {
   const navigate = useNavigate();
@@ -18,48 +32,36 @@ const PortalWorkflowAssistantPage = () => {
         <Title order={1}>Portal Workflow Assistant</Title>
       </Flex>
 
-      <Flex
-        align="center"
-        justify="center"
-        style={{
-          width: "100%",
-          height: 240,
-          borderRadius: 8,
-          border: "2px dashed var(--mantine-color-dimmed)",
-          color: "var(--mantine-color-dimmed)",
-        }}
-      >
-        <Text size="sm" c="dimmed">
-          Media to be added
-        </Text>
-      </Flex>
+      <MediaCarousel media={SCREENSHOTS} />
 
       <Text mt="md">
-        A Chrome extension + standalone webpage built as a private internal tool
-        for a medical clinic, automating patient data extraction from their
-        practice management portal into Google Contacts, and tracking ACC
-        (Accident Compensation Corporation) claim expiry with SMS notification
-        scheduling.
+        Two webpages + Chrome extension built as a private internal toolset for
+        a medical clinic, automating patient data extraction from their practice
+        management portal into Google Contacts, and tracking ACC (Accident
+        Compensation Corporation) claim expiry with SMS notification scheduling.
       </Text>
 
       <Title order={3} mt="xl">
         Key Features
       </Title>
-      <List withPadding my="lg" spacing="sm">
+      <List withPadding my="lg">
         <List.Item>
-          Chrome extension popup combined with a custom standalone notifications
-          manager webpage.
+          Features two main tools: 'ManaTools' for patient data extraction and
+          'ACC Notifications Manager' for tracking ACC claim expiry and
+          scheduling reminders to the patients.
         </List.Item>
         <List.Item>
-          DOM data extraction from the clinic's patient management portal.
+          ManaTools - Patient data from the clinic's webportal can be
+          synchronised to their phone by connecting to Google Contacts.
         </List.Item>
         <List.Item>
-          Patient data exported directly to practitioner's Google Contacts via a
-          custom Google Apps Script, with CSV download as a fallback.
+          ACC Notifications Manager - Set customised SMS reminders for patients
+          with expiring claims.
         </List.Item>
         <List.Item>
-          SMS reminder notification scheduling using ACC injury claim data
-          fetched from the portal.
+          A custom Chrome extension is used to extract patient data from the
+          clinic's webportal, which can be sent to the ACC Notifications
+          Manager.
         </List.Item>
       </List>
     </Container>

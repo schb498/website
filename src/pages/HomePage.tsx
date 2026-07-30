@@ -79,13 +79,6 @@ const projects: Project[] = [
     Icon: TbceIcon as IconType,
   },
   {
-    to: "/table-translator",
-    title: "Table Translator",
-    description:
-      "Extracts and translates tabular data from PDF images into structured logic representations.",
-    Icon: FaTable,
-  },
-  {
     to: "/portal-workflow-assistant",
     title: "Portal Workflow Assistant",
     description:
@@ -98,6 +91,13 @@ const projects: Project[] = [
     description:
       "Enter your goals, time, energy and mood and get a personalized next task recommendation",
     Icon: FaClipboardCheck,
+  },
+  {
+    to: "/table-translator",
+    title: "Table Translator",
+    description:
+      "Extracts and translates tabular data from PDF images into structured logic representations.",
+    Icon: FaTable,
   },
 ];
 

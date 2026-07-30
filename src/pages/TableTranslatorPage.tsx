@@ -47,7 +47,7 @@ const TableTranslatorPage = () => {
       <Title order={3} mt="xl">
         Key Features
       </Title>
-      <List withPadding my="lg" spacing="sm">
+      <List withPadding my="lg">
         <List.Item>
           Upload images containing tables for table translation processing.
           Supply additional table context for higher accuracy in table

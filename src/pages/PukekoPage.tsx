@@ -33,7 +33,7 @@ const PukekoPage = () => {
       <Title order={3} mt="xl">
         Key Features
       </Title>
-      <List withPadding my="lg" spacing="sm">
+      <List withPadding my="lg">
         <List.Item>Loading/storing task schedules (GXL format)</List.Item>
         <List.Item>Visualising schedules</List.Item>
         <List.Item>Visualising task dependency graphs/DAGs</List.Item>
