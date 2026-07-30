@@ -1,7 +1,13 @@
 import React from "react";
 import { Card, Container, Text } from "@mantine/core";
 import { Link } from "react-router-dom";
-import { FaSitemap, FaRocket, FaBrain, FaTable } from "react-icons/fa";
+import {
+  FaSitemap,
+  FaRocket,
+  FaBrain,
+  FaTable,
+  FaClipboardCheck,
+} from "react-icons/fa";
 import { MdMedicalServices } from "react-icons/md";
 import { IconType } from "react-icons";
 
@@ -86,6 +92,13 @@ const projects: Project[] = [
       "Automates patient portal data extraction and ACC claim expiry notifications for a medical clinic",
     Icon: MdMedicalServices,
   },
+  {
+    to: "/next-action",
+    title: "Next Action",
+    description:
+      "Enter your goals, time, energy and mood and get a personalized next task recommendation",
+    Icon: FaClipboardCheck,
+  },
 ];
 
 const HomePage = () => {
@@ -138,7 +151,12 @@ const HomePage = () => {
                   ta="center"
                   mb={10}
                   lh={1.3}
-                  style={{ minHeight: "2.6em", display: "flex", alignItems: "center", justifyContent: "center" }}
+                  style={{
+                    minHeight: "2.6em",
+                    display: "flex",
+                    alignItems: "center",
+                    justifyContent: "center",
+                  }}
                 >
                   {project.title}
                 </Text>

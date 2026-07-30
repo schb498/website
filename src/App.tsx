@@ -9,6 +9,7 @@ import TbcePage from "./pages/TbcePage";
 import TableTranslatorPage from "./pages/TableTranslatorPage";
 import TCMAIPage from "./pages/TCMAIPage";
 import PortalWorkflowAssistantPage from "./pages/PortalWorkflowAssistantPage";
+import NextActionPage from "./pages/NextActionPage";
 
 function App() {
   const theme = createTheme({
@@ -33,6 +34,7 @@ function App() {
               path="/portal-workflow-assistant"
               element={<PortalWorkflowAssistantPage />}
             />
+            <Route path="/next-action" element={<NextActionPage />} />
           </Routes>
         </div>
       </Router>
