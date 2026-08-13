@@ -1,4 +1,4 @@
-import { Container, Divider, Group, Text, ActionIcon } from "@mantine/core";
+import { Container, Group, Text, ActionIcon } from "@mantine/core";
 import { FaGithub, FaLinkedin } from "react-icons/fa";
 import { MdEmail, MdPhone } from "react-icons/md";
 
