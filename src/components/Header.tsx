@@ -20,10 +20,7 @@ function Header() {
   };
 
   return (
-    <Container
-      fluid
-      style={{ padding: "20px 24px 8px", top: 0, zIndex: 1000 }}
-    >
+    <Container fluid style={{ padding: "20px 24px 8px", top: 0, zIndex: 1000 }}>
       <Flex justify="space-between" align="center">
         <div style={{ width: "72px" }} />
 
@@ -32,7 +29,7 @@ function Header() {
             order={1}
             ta="center"
             style={{
-              letterSpacing: "0.15em",
+              letterSpacing: "0.06em",
               textTransform: "uppercase",
               fontWeight: 700,
             }}
@@ -40,9 +37,8 @@ function Header() {
             Project Showcase
           </Title>
           <Text
-            size="md"
-            c="dimmed"
-            fw={500}
+            size="xl"
+            fw={600}
             ta="center"
             style={{ letterSpacing: "0.04em" }}
           >

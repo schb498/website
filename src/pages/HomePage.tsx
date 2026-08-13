@@ -122,8 +122,8 @@ const HomePage = () => {
                 textDecoration: "none",
                 color: "inherit",
                 flex: "1 1 0",
-                minWidth: "180px",
-                maxWidth: "230px",
+                minWidth: "200px",
+                maxWidth: "200px",
               }}
             >
               <Card
@@ -136,13 +136,13 @@ const HomePage = () => {
                   display: "flex",
                   flexDirection: "column",
                   alignItems: "center",
-                  padding: "36px 20px 32px",
+                  padding: "28px 16px 24px",
                 }}
               >
                 <Icon
                   className="card-icon"
-                  size={92}
-                  style={{ marginBottom: 20 }}
+                  size={68}
+                  style={{ marginBottom: 16 }}
                 />
 
                 <Text

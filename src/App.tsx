@@ -2,6 +2,7 @@ import { Route, Routes, BrowserRouter as Router } from "react-router-dom";
 import "@mantine/core/styles.css";
 import { createTheme, Divider, List, MantineProvider } from "@mantine/core";
 import Header from "./components/Header";
+import Footer from "./components/Footer";
 import HomePage from "./pages/HomePage";
 import PukekoPage from "./pages/PukekoPage";
 import EventHorizonPage from "./pages/EventHorizonPage";
@@ -13,10 +14,18 @@ import NextActionPage from "./pages/NextActionPage";
 
 // Slightly stronger borders than Mantine's defaults (gray-3 / dark-4). Applies
 // site-wide to Card withBorder, Divider and anything else using the default border.
+// Also boosts contrast on Mantine's "dimmed" text token (used for secondary
+// copy site-wide) beyond the defaults, which read too faint in both themes.
 const borderVariables = () => ({
   variables: {},
-  light: { "--mantine-color-default-border": "var(--mantine-color-gray-4)" },
-  dark: { "--mantine-color-default-border": "var(--mantine-color-dark-3)" },
+  light: {
+    "--mantine-color-default-border": "var(--mantine-color-gray-4)",
+    "--mantine-color-dimmed": "var(--mantine-color-gray-7)",
+  },
+  dark: {
+    "--mantine-color-default-border": "var(--mantine-color-dark-3)",
+    "--mantine-color-dimmed": "var(--mantine-color-dark-0)",
+  },
 });
 
 function App() {
@@ -38,7 +47,7 @@ function App() {
       <Router basename="/website">
         <Header />
         <Divider my="md" />
-        <div style={{ overflowX: "hidden", paddingBottom: 15 }}>
+        <div style={{ flex: 1, overflowX: "hidden", paddingBottom: 15 }}>
           <Routes>
             <Route path="/" element={<HomePage />} />
             <Route path="/pukeko" element={<PukekoPage />} />
@@ -53,6 +62,7 @@ function App() {
             <Route path="/next-action" element={<NextActionPage />} />
           </Routes>
         </div>
+        <Footer />
       </Router>
     </MantineProvider>
   );
